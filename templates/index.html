@@ -1,0 +1,92 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House Price Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<style>
+    /* static/css/styles.css */
+
+/* Style for the container */
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: left;
+}
+
+/* Style for the heading */
+h1 {
+    font-size: 36px;
+    color: #4CAF50;  /* Green color */
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 10px;
+}
+
+/* Style for form labels */
+label {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+    color: #333;
+}
+
+/* Style for input fields */
+input[type="text"], input[type="number"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin: 10px 0 20px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* Style for the button */
+button {
+    background-color: #4CAF50;  /* Green color */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+}
+</style>
+<body>
+    <div class="container">
+        <h1>House Price Prediction</h1>
+        <form action="/predict" method="POST">
+            <label for="long">Longitude:</label>
+            <input type="text" id="long" name="long" required>
+
+            <label for="lat">Latitude:</label>
+            <input type="text" id="lat" name="lat" required>
+
+            <label for="sqft_living">Square Feet Living:</label>
+            <input type="number" id="sqft_living" name="sqft_living" required>
+
+            <label for="sqft_lot">Square Feet Lot:</label>
+            <input type="number" id="sqft_lot" name="sqft_lot" required>
+
+            <label for="sqft_above">Square Feet Above:</label>
+            <input type="number" id="sqft_above" name="sqft_above" required>
+
+            <button type="submit">Predict Price</button>
+        </form>
+    </div>
+</body>
+</html>
